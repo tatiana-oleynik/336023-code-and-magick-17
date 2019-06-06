@@ -41,8 +41,8 @@ window.renderStatistics = function (ctx, names, times) {
     if (names[i] === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     } else {
-      ctx.fillStyle = 'rgba(0, 0, 255, '+Math.random()+')';
-    };
+      ctx.fillStyle = 'rgba(0, 0, 255, '+ Math.random() +')';
+    }
     ctx.fillRect(coordinate, 250, 40, (-150 * times[i]) / maxTime);
     coordinate += 90;
   }
