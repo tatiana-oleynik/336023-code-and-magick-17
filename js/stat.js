@@ -24,7 +24,7 @@ var getMaxElement = function (arr) {
   return maxElement;
 };
 
-window.renderStatistics = function(ctx) {
+window.renderStatistics = function (ctx) {
   renderCloud(ctx, 110, 20, 'rgba(0, 0, 0, 0.7)');
   renderCloud(ctx, 100, 10, '#fff');
 
