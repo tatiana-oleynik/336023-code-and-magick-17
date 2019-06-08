@@ -48,5 +48,5 @@ var renderItem = function (ctx, names, times) {
 };
 
 var returnColor = function (ctx, name) {
-  (name === 'Вы') ? ctx.fillStyle = 'rgba(255, 0, 0, 1)' : ctx.fillStyle = 'rgba(0, 0, 255, ' + Math.random() + ')';
-}
+  return (name === 'Вы') ? ctx.fillStyle = 'rgba(255, 0, 0, 1)' : ctx.fillStyle = 'rgba(0, 0, 255, ' + Math.random() + ')';
+};
