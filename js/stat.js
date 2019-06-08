@@ -24,13 +24,16 @@ window.renderStatistics = function (ctx, names, times) {
   renderCloud(ctx, 110, 20, 'rgba(0, 0, 0, 0.7)');
   renderCloud(ctx, 100, 10, '#fff');
 
-  var maxTime = getMaxElement(times);
-
   ctx.fillStyle = '#000';
   ctx.font = '16px PT Mono';
   ctx.fillText('Ура вы победили!', 115, 40);
   ctx.fillText('Список результатов:', 115, 60);
 
+  renderItem(ctx, names, times);
+};
+
+var renderItem = function (ctx, names, times) {
+  var maxTime = getMaxElement(times);
   var coordinate = 140;
 
   for (var i = 0; i < names.length; i++) {
@@ -38,11 +41,7 @@ window.renderStatistics = function (ctx, names, times) {
 
     ctx.fillText(names[i], coordinate, 270);
     ctx.fillText(Math.round(times[i]), coordinate, 250 + ((-150 * times[i]) / maxTime) - 10);
-    if (names[i] === 'Вы') {
-      ctx.fillStyle = 'rgba(255, 0, 0, 1)';
-    } else {
-      ctx.fillStyle = 'rgba(0, 0, 255, ' + Math.random() + ')';
-    }
+    (names[i] === 'Вы') ? ctx.fillStyle = 'rgba(255, 0, 0, 1)' : ctx.fillStyle = 'rgba(0, 0, 255, ' + Math.random() + ')';
     ctx.fillRect(coordinate, 250, 40, (-150 * times[i]) / maxTime);
     coordinate += 90;
   }
