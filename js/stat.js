@@ -41,8 +41,12 @@ var renderItem = function (ctx, names, times) {
 
     ctx.fillText(names[i], coordinate, 270);
     ctx.fillText(Math.round(times[i]), coordinate, 250 + ((-150 * times[i]) / maxTime) - 10);
-    var colorSpeaker = (names[i] === 'Вы') ? ctx.fillStyle = 'rgba(255, 0, 0, 1)' : ctx.fillStyle = 'rgba(0, 0, 255, ' + Math.random() + ')';
+    returnColor(ctx, names[i]);
     ctx.fillRect(coordinate, 250, 40, (-150 * times[i]) / maxTime);
     coordinate += 90;
   }
 };
+
+var returnColor = function (ctx, name) {
+  (name === 'Вы') ? ctx.fillStyle = 'rgba(255, 0, 0, 1)' : ctx.fillStyle = 'rgba(0, 0, 255, ' + Math.random() + ')';
+}
