@@ -15,10 +15,10 @@ var renderCloud = function (ctx, x, y, color) {
 
 var setText = function (ctx) {
   ctx.fillStyle = COLOR_TEXT;
-  ctx.font = SIZE_TEXT +' '+ FONT_TEXT;
+  ctx.font = SIZE_TEXT + ' ' + FONT_TEXT;
   ctx.fillText('Ура вы победили!', COORDINATE_TEXT_X, COORDINATE_TEXT_Y);
   ctx.fillText('Список результатов:', COORDINATE_TEXT_X, COORDINATE_TEXT_Y + 20);
-}
+};
 
 var getMaxElement = function (arr) {
   var maxElement = arr[0];
@@ -47,7 +47,7 @@ var renderItems = function (ctx, names, times) {
     renderItem(ctx, names[i], times[i], maxTime, coordinate);
     coordinate += 90;
   }
-}
+};
 
 var renderItem = function (ctx, name, time, maximumTime, coordinate) {
   ctx.fillStyle = COLOR_TEXT;
