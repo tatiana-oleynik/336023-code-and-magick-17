@@ -9,7 +9,7 @@ function getRandomInteger(min, max) {
   var rand = min + Math.random() * (max + 1 - min);
   rand = Math.floor(rand);
   return rand;
-};
+}
 
 var userDialog = document.querySelector('.setup');
 userDialog.classList.remove('hidden');
@@ -21,15 +21,15 @@ var similarWizardTemplate = document.querySelector('#similar-wizard-template')
     .querySelector('.setup-similar-item');
 
 var generateWizard = function (names, surnames, coats, eyes) {
-  var nameWizard = names[getRandomInteger(0, names.length-1)] + ' ' + surnames[getRandomInteger(0, surnames.length-1)];
-  var coatWizard = coats[getRandomInteger(0, coats.length-1)];
-  var eyeWizard = eyes[getRandomInteger(0, eyes.length-1)];
+  var nameWizard = names[getRandomInteger(0, names.length - 1)] + ' ' + surnames[getRandomInteger(0, surnames.length-1)];
+  var coatWizard = coats[getRandomInteger(0, coats.length - 1)];
+  var eyeWizard = eyes[getRandomInteger(0, eyes.length - 1)];
 
   var wizard = {
     name: nameWizard,
     coatColor: coatWizard,
     eyesColor: eyeWizard
-  }
+  };
 
   return wizard;
 };
@@ -54,7 +54,7 @@ var renderWizard = function (wizard) {
   wizardElement.querySelector('.wizard-eyes').style.fill = wizard.eyesColor;
 
   return wizardElement;
-}
+};
 
 var fragment = document.createDocumentFragment();
 for (var i = 0; i < wizards.length; i++) {
