@@ -21,7 +21,7 @@ var similarWizardTemplate = document.querySelector('#similar-wizard-template')
     .querySelector('.setup-similar-item');
 
 var generateWizard = function (names, surnames, coats, eyes) {
-  var nameWizard = names[getRandomInteger(0, names.length - 1)] + ' ' + surnames[getRandomInteger(0, surnames.length-1)];
+  var nameWizard = names[getRandomInteger(0, names.length - 1)] + ' ' + surnames[getRandomInteger(0, surnames.length - 1)];
   var coatWizard = coats[getRandomInteger(0, coats.length - 1)];
   var eyeWizard = eyes[getRandomInteger(0, eyes.length - 1)];
 
