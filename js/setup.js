@@ -1,5 +1,6 @@
 'use strict';
 
+var WIZARD_COUNT = 4;
 var WIZARD_NAMES = ['Иван', 'Хуан Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
 var WIZARD_SURNAMES = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
 var COAT_COLORS = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
@@ -7,12 +8,18 @@ var EYE_COLORS = ['black', 'red', 'blue', 'yellow', 'green'];
 
 function getRandomInteger(min, max) {
   var rand = min + Math.random() * (max + 1 - min);
-  rand = Math.floor(rand);
-  return rand;
+  return Math.floor(rand);
 }
 
-var userDialog = document.querySelector('.setup');
-userDialog.classList.remove('hidden');
+function showElement(unit) {
+  return document.querySelector(unit);
+}
+var userDialog = showElement('.setup');
+
+function hideElement(unit, element) {
+  element.classList.remove(unit);
+}
+hideElement('hidden', userDialog);
 
 var similarListElement = userDialog.querySelector('.setup-similar-list');
 
@@ -37,7 +44,7 @@ var generateWizard = function (names, surnames, coats, eyes) {
 var generateWizards = function (names, surnames, coats, eyes) {
   var wizards = [];
 
-  for (i = 0; i < 4; i++) {
+  for (var i = 0; i < WIZARD_COUNT; i++) {
     wizards.push(generateWizard(names, surnames, coats, eyes));
   }
 
@@ -56,10 +63,15 @@ var renderWizard = function (wizard) {
   return wizardElement;
 };
 
-var fragment = document.createDocumentFragment();
-for (var i = 0; i < wizards.length; i++) {
-  fragment.appendChild(renderWizard(wizards[i]));
-}
-similarListElement.appendChild(fragment);
+var renderWizards = function (wizards) {
+  var fragment = document.createDocumentFragment();
+  for (var i = 0; i < wizards.length; i++) {
+    fragment.appendChild(renderWizard(wizards[i]));
+  }
+  similarListElement.appendChild(fragment);
+};
 
-userDialog.querySelector('.setup-similar').classList.remove('hidden');
+renderWizards(wizards);
+
+var userDialog = showElement('.setup-similar');
+hideElement('hidden', userDialog);
