@@ -63,15 +63,15 @@ var renderWizard = function (wizard) {
   return wizardElement;
 };
 
-var renderWizards = function (wizards) {
+var renderWizards = function (characters) {
   var fragment = document.createDocumentFragment();
-  for (var i = 0; i < wizards.length; i++) {
-    fragment.appendChild(renderWizard(wizards[i]));
+  for (var i = 0; i < characters.length; i++) {
+    fragment.appendChild(renderWizard(characters[i]));
   }
   similarListElement.appendChild(fragment);
-};
+}
 
 renderWizards(wizards);
 
-var userDialog = showElement('.setup-similar');
+userDialog = showElement('.setup-similar');
 hideElement('hidden', userDialog);
