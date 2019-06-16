@@ -36,7 +36,7 @@ setupFireballWrap.addEventListener('click', function () {
 setupOpen.addEventListener('click', function () {
   setup.classList.remove('hidden');
 
-  document.addEventListener ('keydown', function(evt) {
+  document.addEventListener('keydown', function (evt) {
     if (evt.target.tagName === 'INPUT') {
       return;
     } else if (evt.keyCode === ESC_KEYCODE) {
