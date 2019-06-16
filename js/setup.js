@@ -36,7 +36,7 @@ setupFireballWrap.addEventListener('click', function () {
 setupOpen.addEventListener('click', function () {
   setup.classList.remove('hidden');
 
-  document.addEventListener('keydown', function(evt) {
+  document.addEventListener ('keydown', function(evt) {
     if (evt.target.tagName === 'INPUT') {
       return;
     } else if (evt.keyCode === ESC_KEYCODE) {
@@ -58,10 +58,10 @@ setupClose.addEventListener('click', function () {
 setupClose.addEventListener('keydown', function (evt) {
   if (evt.keyCode === ENTER_KEYCODE) {
     setup.classList.add('hidden');
-  };
+  }
 });
 
-userNameInput.addEventListener('invalid', function (evt) {
+userNameInput.addEventListener('invalid', function () {
   if (userNameInput.validity.tooShort) {
     userNameInput.setCustomValidity('Имя должно состоять минимум из 2-х символов');
   } else if (userNameInput.validity.tooLong) {
