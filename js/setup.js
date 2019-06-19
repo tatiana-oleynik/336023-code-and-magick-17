@@ -49,7 +49,7 @@ function generateWizard(names, surnames, coats, eyes) {
   };
 
   return wizard;
-};
+}
 
 function generateWizards(names, surnames, coats, eyes) {
   var wizards = [];
@@ -59,7 +59,7 @@ function generateWizards(names, surnames, coats, eyes) {
   }
 
   return wizards;
-};
+}
 
 var wizards = generateWizards(WIZARD_NAMES, WIZARD_SURNAMES, COAT_COLORS, EYE_COLORS);
 
@@ -71,7 +71,7 @@ function renderWizard(wizard) {
   wizardElement.querySelector('.wizard-eyes').style.fill = wizard.eyesColor;
 
   return wizardElement;
-};
+}
 
 function renderWizards(characters) {
   var fragment = document.createDocumentFragment();
@@ -79,7 +79,7 @@ function renderWizards(characters) {
     fragment.appendChild(renderWizard(characters[i]));
   }
   similarListElement.appendChild(fragment);
-};
+}
 
 renderWizards(wizards);
 
