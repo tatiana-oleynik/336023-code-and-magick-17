@@ -105,8 +105,13 @@ setupFireballWrap.addEventListener('click', function () {
 
 setupOpen.addEventListener('click', function () {
   showElement('hidden', setup);
-  setupDialogElement.style.top = DIALOG_TOP_COORDINATE;
-  setupDialogElement.style.left = DIALOG_LEFT_COORDINATE;
+
+  function setupDefaultDialogStyles(dialogElement) {
+    dialogElement.style.top = DIALOG_TOP_COORDINATE;
+    dialogElement.style.left = DIALOG_LEFT_COORDINATE;
+  }
+
+  setupDefaultDialogStyles(setupDialogElement);
 
   document.addEventListener('keydown', function (evt) {
     if (evt.target.tagName === 'INPUT') {
