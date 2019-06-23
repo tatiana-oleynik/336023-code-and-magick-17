@@ -1,20 +1,8 @@
 'use strict';
-// var DIALOG_TOP_COORDINATE = '80px';
-// var DIALOG_LEFT_COORDINATE = '675px';
-// setupDialogElement.style.top = '80px';
-// setupDialogElement.style.left = '675px';
 
 (function () {
   var setupDialogElement = document.querySelector('.setup');
   var dialogHandler = setupDialogElement.querySelector('.upload');
-
-  function setupDefaultStyles(dialog) {
-    dialog.style.top = '50%';
-    dialog.style.left = '50%';
-    dialog.style.transform = 'translate(-50%, -50%)';
-    dialog.style.position = 'absolute';
-  }
-  setupDefaultStyles(setupDialogElement);
 
   dialogHandler.addEventListener('mousedown', function (evt) {
     evt.preventDefault();
