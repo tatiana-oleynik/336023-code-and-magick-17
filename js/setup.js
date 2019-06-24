@@ -3,6 +3,8 @@
 var WIZARD_COUNT = 4;
 var ESC_KEYCODE = 27;
 var ENTER_KEYCODE = 13;
+var DIALOG_TOP_COORDINATE = '80px';
+var DIALOG_LEFT_COORDINATE = '50%';
 var WIZARD_NAMES = ['Иван', 'Хуан Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
 var WIZARD_SURNAMES = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
 var COAT_COLORS = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
@@ -23,6 +25,7 @@ var similarListElement = userDialog.querySelector('.setup-similar-list');
 var similarWizardTemplate = document.querySelector('#similar-wizard-template')
     .content
     .querySelector('.setup-similar-item');
+var setupDialogElement = document.querySelector('.setup');
 
 function showElement(className, element) {
   element.classList.remove(className);
@@ -102,6 +105,13 @@ setupFireballWrap.addEventListener('click', function () {
 
 setupOpen.addEventListener('click', function () {
   showElement('hidden', setup);
+
+  function setupDefaultDialogStyles(dialogElement) {
+    dialogElement.style.top = DIALOG_TOP_COORDINATE;
+    dialogElement.style.left = DIALOG_LEFT_COORDINATE;
+  }
+
+  setupDefaultDialogStyles(setupDialogElement);
 
   document.addEventListener('keydown', function (evt) {
     if (evt.target.tagName === 'INPUT') {
