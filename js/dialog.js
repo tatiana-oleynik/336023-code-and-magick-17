@@ -2,7 +2,7 @@
 
 (function () {
 
-//  Перетаскивание диалогового окна
+  //  Перетаскивание диалогового окна
   var setup = document.querySelector('.setup');
   var dialogHandler = setup.querySelector('.upload');
 
@@ -41,7 +41,7 @@
       document.removeEventListener('mouseup', onMouseUp);
 
       if (dragged) {
-        function onClickPreventDefault(event) {
+        var onClickPreventDefault = function (event) {
           event.preventDefault();
           dialogHandler.removeEventListener('click', onClickPreventDefault);
         }
@@ -52,7 +52,7 @@
     document.addEventListener('mouseup', onMouseUp);
   });
 
-//  Перетаскивание предметов из магазина в рюкзак
+  //  Перетаскивание предметов из магазина в рюкзак
   var shopElement = document.querySelector('.setup-artifacts-shop');
   var draggedItem = null;
 

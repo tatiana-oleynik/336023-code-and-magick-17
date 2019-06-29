@@ -68,7 +68,7 @@
   setup = document.querySelector('.setup-similar');
   window.util.showElement('hidden', setup);
 
-//  Изменение цвета деталей волшебника по клику или нажитию на клавиатуру
+  //  Изменение цвета деталей волшебника по клику или нажитию на клавиатуру
   function paintWizard(argument, constant) {
     argument.style.fill = constant[window.util.getRandomInteger(0, constant.length - 1)];
   }

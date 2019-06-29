@@ -8,18 +8,18 @@
   var setupOpen = document.querySelector('.setup-open');
   var setupClose = setup.querySelector('.setup-close');
 
-//Открытие/закрытие диалога по клику и нажатию на клавиатуру
-  function onPopupEscPress (evt) {
+//  Открытие/закрытие диалога по клику и нажатию на клавиатуру
+  function onPopupEscPress(evt) {
     window.util.isEscEvent(evt, closePopup);
-  };
+  }
 
-  function openPopup () {
+  function openPopup() {
     window.util.showElement('hidden', setup);
-  };
+  }
 
-  function closePopup () {
+  function closePopup() {
     window.util.hideElement('hidden', setup);
-  };
+  }
 
   setupOpen.addEventListener('click', function () {
     openPopup();

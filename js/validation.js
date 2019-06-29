@@ -3,6 +3,7 @@
 (function () {
   // Валидация поля формы "Имя волшебника"
 
+  var setup = document.querySelector('.setup');
   var userNameInput = setup.querySelector('.setup-user-name');
 
   userNameInput.addEventListener('invalid', function () {
