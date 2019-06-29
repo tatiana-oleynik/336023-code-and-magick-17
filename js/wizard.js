@@ -8,8 +8,8 @@
   var EYE_COLORS = ['black', 'red', 'blue', 'yellow', 'green'];
   var FIREBALL_COLORS = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
 
-  var userDialog = document.querySelector('.setup');
-  var similarListElement = userDialog.querySelector('.setup-similar-list');
+  var setup = document.querySelector('.setup');
+  var similarListElement = setup.querySelector('.setup-similar-list');
   var setupWizard = document.querySelector('.setup-wizard');
   var setupFireballWrap = document.querySelector('.setup-fireball-wrap');
   var fireballColor = document.getElementById('fireball-color');
@@ -65,11 +65,11 @@
 
   renderWizards(wizards);
 
-  userDialog = document.querySelector('.setup-similar');
-  window.util.showElement('hidden', userDialog);
+  setup = document.querySelector('.setup-similar');
+  window.util.showElement('hidden', setup);
 
-//Изменение цвета деталей волшебника по клику или нажитию на клавиатуру
-  function paintWizard (argument, constant) {
+//  Изменение цвета деталей волшебника по клику или нажитию на клавиатуру
+  function paintWizard(argument, constant) {
     argument.style.fill = constant[window.util.getRandomInteger(0, constant.length - 1)];
   }
 

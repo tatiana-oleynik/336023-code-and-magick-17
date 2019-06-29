@@ -2,9 +2,9 @@
 
 (function () {
 
-//Перетаскивание диалогового окна
-  var setupDialogElement = document.querySelector('.setup');
-  var dialogHandler = setupDialogElement.querySelector('.upload');
+//  Перетаскивание диалогового окна
+  var setup = document.querySelector('.setup');
+  var dialogHandler = setup.querySelector('.upload');
 
   dialogHandler.addEventListener('mousedown', function (evt) {
     evt.preventDefault();
@@ -16,7 +16,7 @@
 
     var dragged = false;
 
-    function onMouseMove (moveEvt) {
+    function onMouseMove(moveEvt) {
       moveEvt.preventDefault();
       dragged = true;
 
@@ -30,60 +30,60 @@
         y: moveEvt.clientY
       };
 
-      setupDialogElement.style.top = (setupDialogElement.offsetTop - shift.y) + 'px';
-      setupDialogElement.style.left = (setupDialogElement.offsetLeft - shift.x) + 'px';
-    };
+      setup.style.top = (setup.offsetTop - shift.y) + 'px';
+      setup.style.left = (setup.offsetLeft - shift.x) + 'px';
+    }
 
-    function onMouseUp (upEvt) {
+    function onMouseUp(upEvt) {
       upEvt.preventDefault();
 
       document.removeEventListener('mousemove', onMouseMove);
       document.removeEventListener('mouseup', onMouseUp);
 
       if (dragged) {
-        function onClickPreventDefault (event) {
+        function onClickPreventDefault(event) {
           event.preventDefault();
           dialogHandler.removeEventListener('click', onClickPreventDefault);
-        };
+        }
         dialogHandler.addEventListener('click', onClickPreventDefault);
       }
-    };
+    }
     document.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseup', onMouseUp);
   });
 
-//Перетаскивание предметов из магазина в рюкзак
-var shopElement = document.querySelector('.setup-artifacts-shop');
-var draggedItem = null;
+//  Перетаскивание предметов из магазина в рюкзак
+  var shopElement = document.querySelector('.setup-artifacts-shop');
+  var draggedItem = null;
 
-shopElement.addEventListener('dragstart', function (evt) {
-  if (evt.target.tagName.toLowerCase() === 'img') {
-    draggedItem = evt.target;
-    evt.dataTransfer.setData('text/plain', evt.target.alt);
-  }
-});
+  shopElement.addEventListener('dragstart', function (evt) {
+    if (evt.target.tagName.toLowerCase() === 'img') {
+      draggedItem = evt.target;
+      evt.dataTransfer.setData('text/plain', evt.target.alt);
+    }
+  });
 
-var artifactsElement = document.querySelector('.setup-artifacts');
+  var artifactsElement = document.querySelector('.setup-artifacts');
 
-artifactsElement.addEventListener('dragover', function (evt) {
-  evt.preventDefault();
-  return false;
-});
+  artifactsElement.addEventListener('dragover', function (evt) {
+    evt.preventDefault();
+    return false;
+  });
 
-artifactsElement.addEventListener('drop', function (evt) {
-  evt.target.style.backgroundColor = '';
-  evt.target.appendChild(draggedItem);
-});
+  artifactsElement.addEventListener('drop', function (evt) {
+    evt.target.style.backgroundColor = '';
+    evt.target.appendChild(draggedItem);
+  });
 
 
-artifactsElement.addEventListener('dragenter', function (evt) {
-  evt.target.style.backgroundColor = 'yellow';
-  evt.preventDefault();
-});
+  artifactsElement.addEventListener('dragenter', function (evt) {
+    evt.target.style.backgroundColor = 'yellow';
+    evt.preventDefault();
+  });
 
-artifactsElement.addEventListener('dragleave', function (evt) {
-  evt.target.style.backgroundColor = '';
-  evt.preventDefault();
-});
+  artifactsElement.addEventListener('dragleave', function (evt) {
+    evt.target.style.backgroundColor = '';
+    evt.preventDefault();
+  });
 
 })();
