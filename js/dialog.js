@@ -44,7 +44,7 @@
         var onClickPreventDefault = function (event) {
           event.preventDefault();
           dialogHandler.removeEventListener('click', onClickPreventDefault);
-        }
+        };
         dialogHandler.addEventListener('click', onClickPreventDefault);
       }
     }

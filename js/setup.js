@@ -8,7 +8,7 @@
   var setupOpen = document.querySelector('.setup-open');
   var setupClose = setup.querySelector('.setup-close');
 
-//  Открытие/закрытие диалога по клику и нажатию на клавиатуру
+  //  Открытие/закрытие диалога по клику и нажатию на клавиатуру
   function onPopupEscPress(evt) {
     window.util.isEscEvent(evt, closePopup);
   }
